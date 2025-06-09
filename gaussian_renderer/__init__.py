@@ -107,8 +107,7 @@ def render(viewpoint_camera, pc : GaussianModel, pipe, bg_color : torch.Tensor, 
         scales = scales,
         rotations = rotations,
         cov3D_precomp = cov3D_precomp,
-        factor = mul,
-        backscattering = backscattering
+        factor = mul
         )
     #estimated_water_medium = (1.0 - torch.exp(-depth * medium_coefficient_b)) * medium_color
     depth_norm = (depth - depth.min()) / (depth.max() - depth.min())
