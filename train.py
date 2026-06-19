@@ -121,7 +121,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
             mask = torch.ones_like(image).float()
 
         Ll1_depth = torch.mean(l1_loss(mask * depth, mask * or_depth))
-        Ll1 = l1_loss(mask * image, mask * gt_image)
+        Ll1 = l1_loss(mask * image, mask * gt_image).mean()
 
         if iteration >= opt.mlp_gradient_stop:
             gaussians.mlp_head.requires_grad_(False)

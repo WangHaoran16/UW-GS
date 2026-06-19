@@ -104,6 +104,7 @@ def render(viewpoint_camera, pc : GaussianModel, pipe, bg_color : torch.Tensor, 
         opacities = opacity,
         shs = shs,
         colors_precomp = colors_precomp,
+        colors_precomp_clean=colors_precomp_clean,  # add this
         scales = scales,
         rotations = rotations,
         cov3D_precomp = cov3D_precomp,
